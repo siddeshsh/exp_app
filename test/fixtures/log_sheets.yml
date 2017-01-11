@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  log_type: MyString
+  value: 9.99
+  log_day: 2017-01-11
+  log_time: 2017-01-11 14:27:32
+  note: MyText
+  user_id: 
+
+two:
+  log_type: MyString
+  value: 9.99
+  log_day: 2017-01-11
+  log_time: 2017-01-11 14:27:32
+  note: MyText
+  user_id: 

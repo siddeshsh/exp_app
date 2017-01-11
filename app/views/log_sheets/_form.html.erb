@@ -1,0 +1,41 @@
+<%= form_for(@log_sheet) do |f| %>
+  <% if @log_sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@log_sheet.errors.count, "error") %> prohibited this log_sheet from being saved:</h2>
+
+      <ul>
+      <% @log_sheet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :log_type %><br>
+    <%= f.text_field :log_type %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :log_day %><br>
+    <%= f.date_select :log_day %>
+  </div>
+  <div class="field">
+    <%= f.label :log_time %><br>
+    <%= f.time_select :log_time %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

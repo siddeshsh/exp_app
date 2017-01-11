@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Log Sheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Log type</th>
+      <th>Value</th>
+      <th>Log day</th>
+      <th>Log time</th>
+      <th>Note</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_sheets.each do |log_sheet| %>
+      <tr>
+        <td><%= log_sheet.log_type %></td>
+        <td><%= log_sheet.value %></td>
+        <td><%= log_sheet.log_day.strftime("%m/%d/%Y") %></td>
+        <td><%= log_sheet.log_time.strftime("%I:%M%p") %></td>
+        <td><%= log_sheet.note %></td>
+        <td><%= log_sheet.user_id %></td>
+        <td><%= link_to 'Show', log_sheet %></td>
+        <td><%= link_to 'Edit', edit_log_sheet_path(log_sheet) %></td>
+        <td><%= link_to 'Destroy', log_sheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log sheet', new_log_sheet_path %>
